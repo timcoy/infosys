@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
- * A SpringBoot application allows a user to view accounts and subsequently view transactions on any of the accounts they hold.
+ * A SpringBoot application that allows a user to view accounts and subsequently view transactions on any of the accounts they hold.
  * 
- * @author Tim Coy tim.coy@me.com
+ * @author Tim Coy tim.coy@gmail.com
  *
  */
 @SpringBootApplication
