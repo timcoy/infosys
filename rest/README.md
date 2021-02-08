@@ -3,7 +3,7 @@
 Tim Coy
 
 ## About
-The application contains the backend REST APIs needed to support a web application to that allows a user to view accounts and subsequently view transactions on any of the accounts they hold.
+The application contains the backend REST APIs needed to support a web application that allows a user to view accounts and subsequently view transactions on any of the accounts they hold.
 
 ## Requiremnets
 To build and run this application requires
