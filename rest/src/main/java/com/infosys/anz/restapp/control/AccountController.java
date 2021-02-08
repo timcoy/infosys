@@ -49,10 +49,7 @@ public class AccountController {
      */
     @JsonView(PayloadFilter.Transactions.class)
     @GetMapping(value = "/account/{accountId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Account> transactionsByAccountId(@PathVariable Long accountId) {
-        Optional<Account> account = accountRepository.findById(accountId);
-        if (!account.isPresent())
-            throw new RecordNotFoundException("Unable to locate any transactions for accountId " + accountId);
-        return ResponseEntity.ok(account.get());
+    public Account transactionsByAccountId(@PathVariable Long accountId) {
+        return accountRepository.findById(accountId).orElseThrow(() -> new RecordNotFoundException("Unable to locate any transactions for accountId " + accountId));
     }
 }
