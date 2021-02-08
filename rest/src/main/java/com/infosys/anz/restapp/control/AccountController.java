@@ -38,11 +38,8 @@ public class AccountController {
      */
     @JsonView(PayloadFilter.Accounts.class)
     @GetMapping(value = "/accounts/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> accountsByUserId(@PathVariable Long userId) {
-        Optional<User> user = userRepository.findById(userId);
-        if (!user.isPresent())
-            throw new RecordNotFoundException("Unable to locate any accounts for userId " + userId);
-        return ResponseEntity.ok(user.get());
+    public User accountsByUserId(@PathVariable Long userId) {
+        return userRepository.findById(userId).orElseThrow(() -> new RecordNotFoundException("Unable to locate any accounts for userId " + userId));
     }
 
     /**
